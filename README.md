@@ -32,6 +32,23 @@ Runs on `http://localhost:5173` by default.
 ```bash
 cd backend
 npm install
+```
+
+Copy the environment file and fill in your credentials:
+
+```bash
+cp .env.example .env
+```
+
+Run database migrations:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+Start the server:
+
+```bash
 npm run start:dev
 ```
 
@@ -39,13 +56,14 @@ Runs on `http://localhost:3000` by default.
 
 ## Scripts
 
-| Location   | Command              | Description                |
-|------------|----------------------|----------------------------|
-| `frontend` | `npm run dev`        | Start dev server           |
-| `frontend` | `npm run build`      | Production build           |
-| `frontend` | `npm run preview`    | Preview production build   |
-| `backend`  | `npm run start:dev`  | Start with hot reload      |
-| `backend`  | `npm run build`      | Compile TypeScript         |
-| `backend`  | `npm run start:prod` | Start compiled build       |
-| `backend`  | `npm run test`       | Run unit tests             |
-| `backend`  | `npm run test:e2e`   | Run end-to-end tests       |
+| Location   | Command                    | Description              |
+|------------|----------------------------|--------------------------|
+| `frontend` | `npm run dev`              | Start dev server         |
+| `frontend` | `npm run build`            | Production build         |
+| `frontend` | `npm run preview`          | Preview production build |
+| `backend`  | `npx prisma migrate dev`   | Run database migrations  |
+| `backend`  | `npm run start:dev`        | Start with hot reload    |
+| `backend`  | `npm run build`            | Compile TypeScript       |
+| `backend`  | `npm run start:prod`       | Start compiled build     |
+| `backend`  | `npm run test`             | Run unit tests           |
+| `backend`  | `npm run test:e2e`         | Run end-to-end tests     |
